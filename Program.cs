@@ -1,14 +1,22 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Xml;
-using xadrez_console.tabuleiro;
+using xadrez_console;
+using tabuleiro;
+using xadrez;
+
 
 class Program
 {
-    private static void Main(string[] args)
+     static void Main(string[] args)
     {
-        Posicao P = new Posicao(3, 4);
+        Tabuleiro tab = new Tabuleiro(8, 8);
+        
+        tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0,0));
+        tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+        tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
 
-        Console.WriteLine("Posição ="+ P);
+        Tela.imprimirTabuleiro(tab);
 
+        Console.ReadLine();
     }
 }
