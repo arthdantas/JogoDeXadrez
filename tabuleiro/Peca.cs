@@ -15,7 +15,7 @@ namespace tabuleiro
         public int qteMovimentos { get; protected set; }
         public Tabuleiro tab { get; protected set; }
 
-        public Peca(Cor cor,  Tabuleiro tab)
+        public Peca(Tabuleiro tab, Cor cor)
         {
             this.cor = cor;
             this.posicao = null;
@@ -49,7 +49,7 @@ namespace tabuleiro
             return false; 
         }
 
-        public bool podeMoverPara(Posicao pos)
+        public bool movimentoPossivel(Posicao pos)
         {
             return movimentosPossiveis()[pos.Linha, pos.Coluna];
         }
